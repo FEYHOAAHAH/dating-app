@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкеты</title>
+</head>
+<body>
+    <nav><a href="http://127.0.0.1:8000/registration/" style="border: 1px solid black; border-radius: 5px; text-decoration: none;">Регистрация пользователя</a>
+
+    <div style="width: 300px;
+                margin: auto;
+                margin-top: 130px;">
+        {% for profile in profiles %}
+
+        <div style="border: 3px solid black; margin-bottom: 10px; text-align: center;" >
+
+            <p>{{ profile.name }} {{ profile.surname }}</p>
+            <p>{{ profile.age }}</p>
+            <p>{{ profile.get_status_display }}</p>
+            <p>{{ profile.salary }}</p>
+            <p>
+                <a href="{{ profile.get_absolute_url }}" style="background-color: grey; color: white;">Посмотреть профиль</a>
+            </p>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</body>
+</html>
